@@ -24,8 +24,8 @@
         print($c1 -> tampar() . "<br>");
         print($c1 -> destampar() . "<br>");
 
-        print($c1 -> rabiscar() . "<br>");
+        print($c1 -> rabiscar("Olá mundo") . "<br>");
 
     ?>
 </body>
-</html>
+</html>  

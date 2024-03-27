@@ -7,13 +7,13 @@ class Caneta {
     public int $carga;
     public bool $tampada;
 
-    function rabiscar(){
+    function rabiscar($frase){
         if($this -> tampada){
             $this -> destampar();
         }
-        print("Rabiscando...");
+        print($frase);
     }
-    
+
     function tampar(){
         $this -> tampada = true;
         print(json_encode($this -> tampada));
