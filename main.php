@@ -12,8 +12,11 @@
 
         $c1 = new Caneta;
         $c1 -> modelo = "BIC cristal";
+        $c1 ->  cor = "Azul";
 
-        print($c1 -> modelo);
+        $c1 -> tampar();
+
+        print_r($c1);
 
     ?>
 </body>
