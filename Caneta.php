@@ -4,6 +4,11 @@ class  Caneta{
 
     public $modelo;
     private $ponta;
+
+    public function __construct($model, $point){
+        $this->modelo = $model ?? "Nao informado";
+        $this->ponta = $point ?? "Nao informado";
+    }
     
     public function getModelo(){
         return $this ->  modelo;
@@ -17,4 +22,6 @@ class  Caneta{
     public function setPonta($ponta){
         $this ->  modelo = $ponta;
     }
+
+    
 }
