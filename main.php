@@ -9,7 +9,7 @@
 
     <?php 
         
-        require_once 'Caneta.php';
+        require_once './Caneta.php';
 
         $c1 = new Caneta("Bic Cristal" , 0.5);
         

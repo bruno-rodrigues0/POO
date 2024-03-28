@@ -10,13 +10,13 @@ class  Caneta{
         $this->ponta = $point ?? "Nao informado";
     }
     
-    public function getModelo() : string{
+    public function getModelo(){
         return $this ->  modelo;
     }
     public function setModelo($modelo) : void{
         $this ->  modelo = $modelo;
     }
-    public function getPonta() : string{
+    public function getPonta(){
         return $this ->  ponta;
     }
     public function setPonta($ponta) : void{
