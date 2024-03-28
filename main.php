@@ -6,7 +6,7 @@
     <title>POO</title>
 </head>
 <body>
-    
+
     <?php 
         
         require_once 'Caneta.php';
@@ -18,6 +18,6 @@
 
     <div class="target"></div>
 
-    <script src="main.js"></script>
+    <!-- <script src="main.js"></script> -->
 </body>
 </html>  
