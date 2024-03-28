@@ -1,30 +1,20 @@
 <?php 
 
 class Caneta {
-    public string $modelo;
-    public string $cor;
-    private float $ponta;
-    protected int $carga;
-    protected bool $tampada;
+    protected string $modelo;
 
-    public function rabiscar($frase){
-        if($this -> tampada){
-            $this -> destampar();
-        }
-        print($frase);
-    }
+    protected float $ponta;
 
-    public function tampar(){
-        $this -> tampada = true;
-        print(json_encode($this -> tampada));
-    }
-
-    public function destampar(){
-        $this -> tampada = false;
-        print(json_encode($this -> tampada));
-    }
-
-    private function verModelo() {
-        print($this -> modelo);
-    }
+     public function getModelo(){
+        print($this->modelo);
+     }
+     public function setModelo($modelo){
+        $this->modelo = $modelo;
+     }
+     public function getPonta(){
+        print($this->ponta);
+     }
+     public function setPonta($ponta){
+        $this->ponta = $ponta;
+     }
 }

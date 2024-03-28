@@ -11,12 +11,12 @@
         require_once 'Caneta.php';
 
         $c1 = new Caneta;
-        $c1 -> modelo = "BIC cristal";
-        $c1 ->  cor = "Azul";
-
-        $c1 -> tampar();
-
-        print_r($c1);
+       
+        $c1->setModelo("Bic Cristal");
+        $c1->setPonta(0.5);
+        
+        $c1->getModelo();
+        $c1->getPonta();
 
     ?>
 </body>
