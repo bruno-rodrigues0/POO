@@ -3,28 +3,28 @@
 class Caneta {
     public string $modelo;
     public string $cor;
-    public float $ponta;
-    public int $carga;
-    public bool $tampada;
+    private float $ponta;
+    protected int $carga;
+    protected bool $tampada;
 
-    function rabiscar($frase){
+    public function rabiscar($frase){
         if($this -> tampada){
             $this -> destampar();
         }
         print($frase);
     }
 
-    function tampar(){
+    public function tampar(){
         $this -> tampada = true;
         print(json_encode($this -> tampada));
     }
 
-    function destampar(){
+    public function destampar(){
         $this -> tampada = false;
         print(json_encode($this -> tampada));
     }
 
-    function verMOdelo() {
+    private function verModelo() {
         print($this -> modelo);
     }
 }
