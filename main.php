@@ -25,6 +25,8 @@
         $user2 -> abrirConta();
 
         $user2 -> depositar(540);
+
+        $user2 -> sacar(300);
         
         print("<br>" . $user2 -> getSaldo());
         print("<br>" . $user2 -> getNumConta());

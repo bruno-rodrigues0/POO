@@ -8,50 +8,63 @@
         private bool $status;
         private static int $count = 0;
         public function __construct($tipo, $dono){
-            $this -> numConta = Conta::$count + 1;
-            $this -> tipo = $tipo;
-            $this -> dono = $dono;
-            $this -> status = false;
+            $this -> setNumConta(Conta::$count);
+            $this -> setTipo($tipo);
+            $this -> setDono($dono);
+            $this -> setStatus(false);
             $this -> saldo = 0.00;
             Conta::$count++; 
         }
 
         public function abrirConta(){
-            if($this -> status == false){
-                $this -> status = true;
-                $this -> saldo = 50.00;
+            if($this -> getStatus() == false 
+                && $this -> getTipo() == "CC"){
+
+                $this -> setStatus(true);
+                $this -> setSaldo(50);
+
+            } else if($this -> getStatus() == false
+                && $this -> getTipo() == "CP") {
+
+                $this -> setStatus(true);
+                $this -> setSaldo(150);
+
             }
         }
 
         public function fecharConta(){
-            if($this -> status == true 
-                && $this -> saldo == 0)
+            if($this -> getStatus() == true 
+                && $this -> getSaldo() == 0)
             {
-                $this -> status = false;
+                $this -> setStatus(false);
             } else {
                 print("Não foi possivel fechar sua conta. Verifique seu saldo.");
             }
         }
 
         public function depositar($value){
-            if($this -> status == true){
-                $this -> saldo = $this -> saldo + $value;
+            if($this -> getStatus() == true){
+                $this -> setSaldo($value);
             } else {
                 print("Conta fechada!");
             }
         }
 
         public function sacar($value){
-            if($this -> status == true 
-                && $this -> saldo > $value)
+            if($this -> getStatus() == true 
+                && $this -> getSaldo() > $value)
             {
-                $this -> saldo = $this -> saldo - $value;
+                $this -> setSaldo(-$value);
             }   
         }
 
         public function pagarMensal(){
-            if($this -> status == true){
-                $this -> saldo = $this -> saldo - 12.00;
+            if($this -> getStatus() == true
+            && $this -> getTipo() == "CC"){
+                $this -> setSaldo(-12);
+            } else if ($this -> getStatus() == true
+            && $this -> getTipo() == "CP"){
+                $this -> setSaldo(-20);
             }
         }
 
@@ -74,17 +87,17 @@
         private function setDono($dono){
             $this -> dono = $dono;
         }
-        private function setNumConta($numConta){
-            $this -> dono = $numConta;
+        private function setNumConta($counter){
+            $this -> numConta = $counter + 1;
         }
         private function setTipo($tipo){
-            $this -> dono = $tipo;
+            $this -> tipo = $tipo;
         }
-        private function setSaldo($saldo){
-            $this -> dono = $saldo;
+        private function setSaldo($value){
+            $this -> saldo += $value;
         }
         private function setStatus($status){
-            $this -> dono = $status;
+            $this -> status = $status;
         }
  
     }
