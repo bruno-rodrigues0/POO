@@ -22,6 +22,4 @@ class  Caneta{
     public function setPonta($ponta) : void{
         $this ->  modelo = $ponta;
     }
-
-    
 }

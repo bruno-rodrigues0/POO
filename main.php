@@ -9,11 +9,25 @@
 
     <?php 
         
-        require_once './Caneta.php';
+        require_once("./Banco.php");
 
-        $c1 = new Caneta("Bic Cristal" , 0.5);
+        $user1 = new Conta("CC", "Bruno");
+
+        $user1 -> abrirConta();
+
+        $user1 -> depositar(230);
         
-        print("Modelo da caneta {$c1->getModelo()} e ponta da caneta {$c1->getPonta()}")
+        print($user1 -> getSaldo());
+        print("<br>" . $user1 -> getNumConta());
+
+        $user2 = new Conta("CC", "Gabriel");
+
+        $user2 -> abrirConta();
+
+        $user2 -> depositar(540);
+        
+        print("<br>" . $user2 -> getSaldo());
+        print("<br>" . $user2 -> getNumConta());
     ?>
 
     <div class="target"></div>
