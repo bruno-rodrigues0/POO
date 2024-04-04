@@ -1,6 +1,6 @@
 <?php
 
-    class Conta{
+    class Contas{
         public int $numConta;
         protected string $tipo;
         private string $dono;
@@ -8,12 +8,12 @@
         private bool $status;
         private static int $count = 0;
         public function __construct($tipo, $dono){
-            $this -> setNumConta(Conta::$count);
+            $this -> setNumConta(Contas::$count);
             $this -> setTipo($tipo);
             $this -> setDono($dono);
             $this -> setStatus(false);
             $this -> saldo = 0.00;
-            Conta::$count++; 
+            Contas::$count++; 
         }
 
         public function abrirConta(){

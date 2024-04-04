@@ -11,7 +11,7 @@
         
         require_once("./Banco.php");
 
-        $user1 = new Conta("CC", "Bruno");
+        $user1 = new Contas("CC", "Bruno");
 
         $user1 -> abrirConta();
 
@@ -20,7 +20,7 @@
         print($user1 -> getSaldo());
         print("<br>" . $user1 -> getNumConta());
 
-        $user2 = new Conta("CC", "Gabriel");
+        $user2 = new Contas("CC", "Gabriel");
 
         $user2 -> abrirConta();
 
