@@ -46,7 +46,7 @@ class ControleRemoto implements Controlador{
         print ($this -> getTocando())?"Sim":"Não";
         print "<br>Volume: ";
         for($i = 0; $i <= $this -> getVolume() - 10; $i+=10){
-            echo "◙";
+            echo "■ ";
         }
         echo "<br>";
     }
